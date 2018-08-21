@@ -44,7 +44,7 @@ getNum(const char *fname, const char *arg, int flags, const char *name)
                         (flags & GN_BASE_16) ? 16 : 10;
 
     errno = 0;
-    res = strtol(arg, &endptr, base);
+    res = strtol(arg, &endptr, base);//endptr指向第一个非数字的下标
     if (errno != 0)
         gnFail(fname, "strtol() failed", arg, name);
 
